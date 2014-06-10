@@ -22,9 +22,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
->![Illustration](SS1.png "This image is for Illustration only")
->>![Illustration](SS2.png "This image is for Illustration only")
->>![Illustration](SS3.png "This image is for Illustration only")
+>![Illustration](SS1.PNG "This image is for Illustration only")
+>>![Illustration](SS2.PNG "This image is for Illustration only")
+>>![Illustration](SS3.PNG "This image is for Illustration only")
 
 I hope you find it useful.
 
