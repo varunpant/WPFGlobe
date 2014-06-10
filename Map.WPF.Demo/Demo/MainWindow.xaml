@@ -1,0 +1,52 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" KeyDown="Window_KeyDown" Height="453" Width="600" xmlns:my="clr-namespace:WPF.Globe.ClientControl;assembly=WPF.Globe.ClientControl" Loaded="Window_Loaded">
+    <Grid>
+        <my:Globe  Name="globe1"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
+
+        <Border Name="topBar" >
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#E0E0E0" Opacity="0.6">
+                <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                    <Label Foreground="#0000FF" FontWeight="Bold">Latitude:</Label>
+                    <TextBox Name="LatitudeTxt" Width="100" />
+                    <Label Foreground="#0000FF" FontWeight="Bold">Longitude:</Label>
+                    <TextBox Name="LongitudeTxt" Width="100" />
+                    <Button Name="GoBtn" Width="50" Margin="10,0,0,0" Click="GoBtn_Click">Go!</Button>
+                    <Label Foreground="#0000FF" FontWeight="Bold">Change Provider:</Label>
+                    
+                    <ComboBox Name="ddlLayers" Width="70" SelectionChanged="ddlLayers_SelectionChanged" ></ComboBox>
+                    <ComboBox Name="ddlModes" Width="70" SelectionChanged="ddlModes_SelectionChanged" ></ComboBox>
+
+                </DockPanel>
+            </StackPanel>
+        </Border>
+
+        <Slider RenderTransformOrigin="0.501,0.622" 
+            x:Name="ZoomSlider" 
+                Orientation="Vertical" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top"
+                Height="120"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                Maximum="11" Minimum="0" Value="0" Margin="0,22,14,0"  >
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                    <SkewTransform AngleX="0" AngleY="0"/>
+                    <RotateTransform Angle="179.863"/>
+                    <TranslateTransform X="-0.954" Y="-9.028"/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+            <Slider.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                    <GradientStop Color="#1B3F8B" Offset="1"/>
+                </LinearGradientBrush>
+            </Slider.Background>
+        </Slider>
+
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" FontWeight="Heavy" FontSize="24" >+</TextBlock>
+    </Grid>
+</Window>
